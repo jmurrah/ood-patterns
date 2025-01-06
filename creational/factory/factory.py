@@ -14,19 +14,19 @@ class Animal(ABC):
 
 class Dog(Animal):
 
-    def sleep(self):
+    def sleep(self) -> str:
         return "The DOG is sleeping!"
     
-    def eat(self):
+    def eat(self) -> str:
         return "The DOG is eating!"
 
 
 class Penguin(Animal):
 
-    def sleep(self):
+    def sleep(self) -> str:
         return "The PENGUIN is sleeping!"
     
-    def eat(self):
+    def eat(self) -> str:
         return "The PENGUIN is eating!"
 
 
