@@ -45,7 +45,7 @@ class ProductABuilder(Builder):
     def step_four(self):
         self.steps.append("4A")
     
-    def get_product(self):
+    def get_product(self) -> list[str]:
         return self.steps
     
 
@@ -66,7 +66,7 @@ class ProductBBuilder(Builder):
     def step_four(self):
         self.steps.append("4B")
     
-    def get_product(self):
+    def get_product(self) -> list[str]:
         return self.steps
 
 
@@ -95,7 +95,6 @@ def client_code(builder: Builder):
     director = Director()
     director.make_reverse_combo(builder)
     director.make_anagram_combo(builder)
-    
 
 
 if __name__ == "__main__":
