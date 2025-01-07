@@ -1,32 +1,26 @@
-
-class RoundHose:
-
-    shape = "ROUND"
-
 class SquareHose:
 
     shape = "SQUARE"
 
-
-class SquareToRoundHoseAdapter:
-
-    @classmethod
-    def attach_hose(cls, square_hose: SquareHose):
-        print("Initial Hose: " + square_hose.shape)
-        print("Doing some conversion magic!")
-        round_hose = RoundHose()
-        print("Final Hose: " + round_hose.shape)
-        RoundFaucet.attach_hose(round_hose)
+    def attach_hose(self):
+        print("Attaching SQUARE HOSE!")
 
 
+# The Adaptee (Useful functionality we need)
 class RoundFaucet:
 
-    @classmethod
-    def attach_hose(cls, round_hose: RoundHose):
+    def attach_round_hose(self):
         print("Attaching the round hose!")
-        print(round_hose.shape)
+
+
+# The Adapter (Converting square to round)
+class HoseAdapter(SquareHose, RoundFaucet):
+
+    def attach_hose(self):
+        print("Doing some conversion magic!")
+        self.attach_round_hose()
 
 
 if __name__ == "__main__":
-    square_hose = SquareHose()
-    SquareToRoundHoseAdapter.attach_hose(square_hose)
+    square_hose = HoseAdapter()
+    square_hose.attach_hose()
