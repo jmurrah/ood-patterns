@@ -5,11 +5,11 @@ class Device(ABC):
 
     @abstractmethod
     def power_on(self):
-        print("Device is powered ON!")
+        pass
     
     @abstractmethod
     def power_off(self):
-        print("Device is powered OFF!")
+        pass
 
 
 class TV(Device):
