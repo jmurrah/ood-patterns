@@ -23,4 +23,3 @@ if __name__ == "__main__":
     print("\nGetting instance again!")
     obj2 = Singleton.get_instance()
     print(obj2.created_at)
-    
